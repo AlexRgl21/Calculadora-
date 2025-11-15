@@ -1,0 +1,68 @@
+Proceso EstadisticaBasica
+	
+    Definir n, i Como Entero
+    Definir numeros Como Real
+    Definir suma, media, mediana, moda Como Real
+	
+    Escribir "¿Cuántos números deseas ingresar?"
+    Leer n
+	
+    Dimension numeros[n]
+	
+    // --- Leer los números ---
+    Para i <- 1 Hasta n Con Paso 1
+        Escribir "Ingresa el número ", i, ":"
+        Leer numeros[i]
+    Fin Para
+	
+    // --- Calcular media ---
+    suma <- 0
+    Para i <- 1 Hasta n
+        suma <- suma + numeros[i]
+    Fin Para
+    media <- suma / n
+	
+    // --- Ordenar la lista para calcular la mediana ---
+    Para i <- 1 Hasta n-1
+        Para j <- i+1 Hasta n
+            Si numeros[j] < numeros[i] Entonces
+                aux <- numeros[i]
+                numeros[i] <- numeros[j]
+                numeros[j] <- aux
+            FinSi
+        Fin Para
+    Fin Para
+	
+    // --- Calcular mediana ---
+    Si n % 2 = 0 Entonces
+        mediana <- (numeros[n/2] + numeros[n/2 + 1]) / 2
+    SiNo
+        mediana <- numeros[(n+1)/2]
+    FinSi
+	
+    // --- Calcular moda ---
+    Definir maxFrecuencia Como Entero
+    Definir frecuencia Como Entero
+    maxFrecuencia <- 0
+    moda <- numeros[1]
+	
+    Para i <- 1 Hasta n
+        frecuencia <- 0
+        Para j <- 1 Hasta n
+            Si numeros[i] = numeros[j] Entonces
+                frecuencia <- frecuencia + 1
+            FinSi
+        Fin Para
+		
+        Si frecuencia > maxFrecuencia Entonces
+            maxFrecuencia <- frecuencia
+            moda <- numeros[i]
+        FinSi
+    Fin Para
+	
+    // --- Mostrar resultados ---
+    Escribir "Media: ", media
+    Escribir "Mediana: ", mediana
+    Escribir "Moda: ", moda
+	
+FinProceso
