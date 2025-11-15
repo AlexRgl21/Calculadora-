@@ -1,0 +1,58 @@
+Algoritmo CalculadoraBasica
+    
+    Definir opcion Como Entero
+    Definir n1, n2, resultado Como Real
+	
+    
+	
+    Mientras opcion <> 5 Hacer
+        Escribir ""
+        Escribir "===== CALCULADORA BÁSICA ====="
+        Escribir "1) Sumar ( + )"
+        Escribir "2) Restar ( - )"
+        Escribir "3) Multiplicar ( * )"
+        Escribir "4) Dividir ( / )"
+        Escribir "5) Salir"
+        Escribir "Seleccione una opción (1-5): "
+        Leer opcion
+		
+        Segun opcion Hacer
+            1:
+                Escribir "Ingrese el primer número: "
+                Leer n1
+                Escribir "Ingrese el segundo número: "
+                Leer n2
+                resultado <- n1 + n2
+                Escribir "Resultado: ", resultado
+            2:
+                Escribir "Ingrese el primer número: "
+                Leer n1
+                Escribir "Ingrese el segundo número: "
+                Leer n2
+                resultado <- n1 - n2
+                Escribir "Resultado: ", resultado
+            3:
+                Escribir "Ingrese el primer número: "
+                Leer n1
+                Escribir "Ingrese el segundo número: "
+                Leer n2
+                resultado <- n1 * n2
+                Escribir "Resultado: ", resultado
+            4:
+                Escribir "Ingrese el primer número (dividendo): "
+                Leer n1
+                Escribir "Ingrese el segundo número (divisor): "
+                Leer n2
+                Si n2 = 0 Entonces
+                    Escribir "ERROR: División por cero no permitida. Intente con otro divisor."
+                Sino
+                    resultado <- n1 / n2
+                    Escribir "Resultado: ", resultado
+                FinSi
+            5:
+                Escribir "Saliendo de la calculadora... ¡Hasta luego!"
+            De Otro Modo:
+                Escribir "Opción inválida. Ingrese un número entre 1 y 5."
+        FinSegun
+    FinMientras
+FinAlgoritmo
