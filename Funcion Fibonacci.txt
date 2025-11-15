@@ -1,0 +1,45 @@
+Algoritmo Principal
+	
+
+    Fibonacci()
+	
+FinAlgoritmo
+
+
+
+SubProceso Fibonacci
+    Definir inicio, n, contador Como Entero
+    Definir a, b, c Como Entero
+	
+    Escribir "Ingresa el número inicial:"
+    Leer inicio
+	
+    Escribir "¿Cuántos términos deseas generar?"
+    Leer n
+	
+   
+    a <- 0
+    b <- 1
+	
+   
+    Mientras a < inicio Hacer
+        c <- a + b
+        a <- b
+        b <- c
+    FinMientras
+	
+    contador <- 0
+	
+    Escribir "=== Sucesión de Fibonacci generada ==="
+	
+    Mientras contador < n Hacer
+        Escribir a
+		
+      
+        c <- a + b
+        a <- b
+        b <- c
+		
+        contador <- contador + 1
+    FinMientras
+FinSubProceso
