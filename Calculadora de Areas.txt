@@ -1,0 +1,101 @@
+Algoritmo CalculadoraAreas
+	
+    Definir opcion Como Entero
+    Definir radio, diametro, area, lado, base, altura, baseM, baseMe Como Real
+    Definir tipo Como Cadena
+	Definir pii Como Real   
+	pii <- 3.141592
+	
+    Repetir
+		
+        Limpiar Pantalla
+        Escribir "=== CALCULADORA DE AREAS ==="
+        Escribir "1) Circulo"
+        Escribir "2) Cuadrado"
+        Escribir "3) Triangulo"
+        Escribir "4) Trapecio"
+        Escribir "0) Salir"
+        Escribir ""
+        Escribir "Selecciona una opcion: "
+        Leer opcion
+		
+        Segun opcion Hacer
+			
+            1:
+                Escribir "Circulo seleccionado."
+                Escribir "¿Vas a introducir Radio (R) o Diametro (D)?"
+                Leer tipo
+				
+                Si tipo = "R" O tipo = "r" Entonces
+					
+                    Escribir "Introduce el radio:"
+                    Leer radio
+                    diametro <- radio * 2
+                    area <- PI * radio * radio
+					
+                    Escribir "Radio: ", radio
+                    Escribir "Diametro: ", diametro
+                    Escribir "Area: ", area
+					
+                Sino
+                    Si tipo = "D" O tipo = "d" Entonces
+						
+                        Escribir "Introduce el diametro:"
+                        Leer diametro
+                        radio <- diametro / 2
+                        area <- PI * radio * radio
+						
+                        Escribir "Diametro: ", diametro
+                        Escribir "Radio: ", radio
+                        Escribir "Area: ", area
+						
+                    Sino
+                        Escribir "Opcion invalida."
+                    FinSi
+                FinSi
+				
+            2:
+                Escribir "Cuadrado seleccionado."
+                Escribir "Introduce el lado:"
+                Leer lado
+                area <- lado * lado
+                Escribir "Area: ", area
+				
+            3:
+                Escribir "Triangulo seleccionado."
+                Escribir "Introduce la base:"
+                Leer base
+                Escribir "Introduce la altura:"
+                Leer altura
+                area <- (base * altura) / 2
+                Escribir "Area: ", area
+				
+            4:
+                Escribir "Trapecio seleccionado."
+                Escribir "Introduce la base mayor:"
+                Leer baseM
+                Escribir "Introduce la base menor:"
+                Leer baseMe
+                Escribir "Introduce la altura:"
+                Leer altura
+				
+                area <- ((baseM + baseMe) / 2) * altura
+                Escribir "Area: ", area
+				
+            0:
+                Escribir "Saliendo..."
+				
+            De Otro Modo:
+                Escribir "Opcion no valida."
+				
+        FinSegun
+		
+        Si opcion <> 0 Entonces
+            Escribir ""
+            Escribir "Presiona ENTER para continuar..."
+            Esperar Tecla
+        FinSi
+		
+    Hasta Que opcion = 0
+	
+FinAlgoritmo
